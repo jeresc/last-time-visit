@@ -1,0 +1,11 @@
+<h1>hey there</h1>
+<ul id="content"></ul>
+
+<script>
+  const source = new EventSource("/counter");
+  const ul = document.getElementById("content");
+
+  source.addEventListener("update", (e) => {
+    ul.innerHTML += `<li>${e.data}</li>`;
+  });
+</script>
